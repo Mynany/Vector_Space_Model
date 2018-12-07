@@ -1,0 +1,329 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid1\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid101\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid201\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid301\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid4}
+{\list\listtemplateid5\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid401\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid5}
+{\list\listtemplateid6\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid501\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid6}
+{\list\listtemplateid7\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid601\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid7}
+{\list\listtemplateid8\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid701\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid8}
+{\list\listtemplateid9\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid801\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid9}
+{\list\listtemplateid10\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid901\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid10}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}{\listoverride\listid6\listoverridecount0\ls6}{\listoverride\listid7\listoverridecount0\ls7}{\listoverride\listid8\listoverridecount0\ls8}{\listoverride\listid9\listoverridecount0\ls9}{\listoverride\listid10\listoverridecount0\ls10}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww14240\viewh8740\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Create by Yumeng Yang on 9/25/2018\
+Example Program(R) Version 1.0 9/23/2018\
+\
+FUNCTIONALITY\
+\'97\'97\'97\'97\'97\'97\'97\'97\
+- This project has FIVE functions. To preprocess or index documents and queries could have been the same and use the same function, which makes code shorter. But I want to divide different queries into different documents, thus I wrote two function to process document and query seperately\
+\
+- The first function is to preprocess documents. \
+- The second function is to index preprocessed document, that is to calculate the word_in_doc, \
+- The third function is to preprocess the query document, split the query file into 10 different document, one query per document\
+- The fourth function is to index the preprocessed query file, \
+- The last function is to get vector information retrieval. Details are as below.\
+\
+GENERAL USAGE NOTES\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+To run this program, cd src, run processDoc.py first, then run processQuery.py, then run IndexNRertieval. \
+(Before run the project, you need to remove all the files in preprocessed_doc, preprocessed_query, index_doc, index_query and output)\
+preprocessed_doc: documents after preprocessing.\
+preprocessed_query: query after preprocessing and dividing\
+index_doc: documents after indexed. Includes different dictionaries\
+index_query: query after indexed. Includes different dictionaries\
+output: document ranking related to this query\
+\
+DETAILS\
+-------------\
+\pard\pardeftab720\sl380\partightenfactor0
+\cf2 \expnd0\expndtw0\kerning0
+After doing preprocess and index for document, we have dictionary \
+\pard\pardeftab720\li960\fi-480\sl400\partightenfactor0
+\cf2 \'b7\'a0\'a0\'a0\'a0\'a0 word_dict \{ \} contains all the terms(key) and its occurrence times(value). \
+\'b7\'a0\'a0\'a0\'a0\'a0 Word_in_doc \{ \} contains all the terms(key) and the document frequency of term(value)\
+\'b7\'a0\'a0\'a0\'a0\'a0 Word_freq_in_doc \{ \} contains all the documents(key) and the words(value, key) in this document and their occurrence times(value) in this document \
+\'b7\'a0\'a0\'a0\'a0\'a0 max_freq_in_doc \{ \} contains the frenquency of the most common term in the document\
+\pard\pardeftab720\sl380\partightenfactor0
+\cf2 Cosine similarity ={{\NeXTGraphic unknown.png \width3620 \height580 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\'a0 \
+\pard\pardeftab720\sl380\partightenfactor0
+\cf2 {{\NeXTGraphic 1__#$!@%!#__unknown.png \width4000 \height640 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\pardeftab720\sl380\partightenfactor0
+\cf2 \
+\pard\pardeftab720\li960\fi-480\sl400\partightenfactor0
+\cf2 \'b7\'a0\'a0\'a0\'a0\'a0 {{\NeXTGraphic 2__#$!@%!#__unknown.png \width240 \height320 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}: frequency if term i in document j\
+\'b7\'a0\'a0\'a0\'a0\'a0 {{\NeXTGraphic 3__#$!@%!#__unknown.png \width980 \height340 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}: the frequency of the most common term in the document\
+\'b7\'a0\'a0\'a0\'a0\'a0 {{\NeXTGraphic 4__#$!@%!#__unknown.png \width180 \height280 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}: total number of documents\
+\'b7\'a0\'a0\'a0\'a0\'a0 {{\NeXTGraphic 5__#$!@%!#__unknown.png \width300 \height280 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}: document frequency of term i\
+\pard\pardeftab720\sl380\partightenfactor0
+\cf2 For queries: \
+\pard\pardeftab720\li960\fi-480\sl400\partightenfactor0
+\cf2 \'b7\'a0\'a0\'a0\'a0\'a0 N = total number of documents\
+\'b7\'a0\'a0\'a0\'a0\'a0 {{\NeXTGraphic 5__#$!@%!#__unknown.png \width300 \height280 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\'a0= document frequency of term i in query\
+\pard\pardeftab720\sl380\partightenfactor0
+\cf2 combine with :\
+\pard\pardeftab720\li960\fi-480\sl400\partightenfactor0
+\cf2 \'b7\'a0\'a0\'a0\'a0\'a0 {{\NeXTGraphic 2__#$!@%!#__unknown.png \width240 \height320 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\'a0\'97> word_freq_in_doc[j][i]\
+\'b7\'a0\'a0\'a0\'a0\'a0 {{\NeXTGraphic 3__#$!@%!#__unknown.png \width980 \height340 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\'a0\'97> max_freq_in_doc[j]\
+\'b7\'a0\'a0\'a0\'a0\'a0 {{\NeXTGraphic 4__#$!@%!#__unknown.png \width180 \height280 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬} \'97> the length of max_freq_in_doc\
+\'b7\'a0\'a0\'a0\'a0\'a0 {{\NeXTGraphic 5__#$!@%!#__unknown.png \width300 \height280 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬} \'97>  length of word_in_doc[i]
+\fs32 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs24 \cf0 \kerning1\expnd0\expndtw0 \
+ANSWERS\
+\'97\'97\'97\'97\'97\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26 \cf0 \expnd0\expndtw0\kerning0
+Top 10 documents in rank list\
+Query: 1	Pr: 0.0 	Re: 0.0\
+Query: 2	Pr: 0.2 	Re: 0.1333333333\
+Query: 3	Pr: 0.1 	Re: 0.0666666667\
+Query: 4	Pr: 0.1 	Re: 0.0555555556\
+Query: 5	Pr: 0.0 	Re: 0.0\
+Query: 6	Pr: 0.3 	Re: 0.1666666667\
+Query: 7	Pr: 0.7 	Re: 0.7777777778\
+Query: 8	Pr: 0.2 	Re: 0.5\
+Query: 9	Pr: 0.0 	Re: 0.0\
+Query: 10	Pr: 0.1 	Re: 0.0416666667\
+Avg precision:0.17\
+Avg Recall:0.1741666\
+\
+Top 50 documents in rank list\
+Query: 1	Pr: 0.0	Re: 0.0\
+Query: 2	Pr: 0.12	Re: 0.4\
+Query: 3	Pr: 0.12	Re: 0.4\
+Query: 4	Pr: 0.02	Re: 0.0555555556\
+Query: 5	Pr: 0.04	Re: 0.10526316\
+Query: 6	Pr: 0.08	Re: 0.2222222222\
+Query: 7	Pr: 0.18	Re: 1\
+Query: 8	Pr: 0.08	Re: 1\
+Query: 9	Pr: 0.04	Re: 0.25\
+Query: 10	Pr: 0.06	Re: 0.125\
+Avg precision:0.074\
+Avg Recall:0.3558\
+\
+Top 100 documents in rank list\
+Query: 1	Pr: 0.0	Re: 0.0\
+Query: 2	Pr: 0.09	Re: 0.6\
+Query: 3	Pr: 0.1	Re: 0.6666666667\
+Query: 4	Pr: 0.02	Re: 0.0555555556\
+Query: 5	Pr: 0.06	Re: 0.31578947\
+Query: 6	Pr: 0.08	Re: 0.4444444444\
+Query: 7	Pr: 0.09	Re: 1\
+Query: 8	Pr: 0.04	Re: 1\
+Query: 9	Pr: 0.04	Re: 0.5\
+Query: 10	Pr: 0.04	Re: 0.16666666667\
+Avg precision:0.056\
+Avg Recall:0.4749\
+\
+\
+Top 500 documents in rank list\
+Query: 1	Pr: 0.002	Re: 1.0\
+Query: 2	Pr: 0.03	Re: 1\
+Query: 3	Pr: 0.03	Re: 1\
+Query: 4	Pr: 0.032	Re: 0.88888888889\
+Query: 5	Pr: 0.034	Re: 0.89473684\
+Query: 6	Pr: 0.036	Re: 1\
+Query: 7	Pr: 0.018	Re: 1\
+Query: 8	Pr: 0.008	Re: 1\
+Query: 9	Pr: 0.014	Re: 0.875\
+Query: 10	Pr: 0.028	Re: 0.583333333333\
+Avg precision:0.0232\
+Avg Recall:0.9242\
+
+\f0\fs24 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 ATACHMENT\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+(Blank means the ranking is bigger than 500)\
+Query  document  retrieval ranking\
+\pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\pardirnatural\partightenfactor0
+\ls1\ilvl0\cf0 {\listtext	\uc0\u8259 	}\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 1          156            			361\
+\pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\pardirnatural\partightenfactor0
+\ls2\ilvl0\cf0 {\listtext	\uc0\u8259 	}\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 2          666                    		27\
+2          667                    		250\
+2         1258                    		195\
+2         1394                     		12\
+2          668                      		273\
+2          670                     		28\
+2         1204                    		1\
+2         1391              			148\
+2         1395                      		111\
+2         1300                		122\
+2          37                         	 	58\
+2          559                	 	 29\
+2          630                         	 52\
+2         1107                             	56\
+2         1213                      		10\
+\pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\pardirnatural\partightenfactor0
+\ls3\ilvl0\cf0 {\listtext	\uc0\u8259 	}\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 3          24                                  100\
+3         101                      		26\
+3         666                              	44\
+3         667				216\
+3         93             			126\
+3         1258				252\
+3         1393         			46\
+3         559 				22\
+3         630           			72\
+3         662           
+\b 			207
+\b0 \
+3        1104 				84\
+3        1107            			87\
+3        1204				10\
+3        1213           			45\
+3        1300				116\
+\pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\pardirnatural\partightenfactor0
+\ls4\ilvl0\cf0 {\listtext	\uc0\u8259 	}\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 4        1391				334\
+4        666					158\
+4        667					143\
+4        1258				391\
+4        1078           
+\b 			251
+\b0 \
+4        1080 				432\
+4        1081           			349	\
+4        1394            			259\
+4        1395				327\
+4        1214				268\
+4        1198				133\
+4        1204				373\
+4        1300           
+\b 			
+\b0 324\
+4         559            		\
+4         630 				253\
+4         662            		\
+4        1107 				34\
+4        1213				466\
+\pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\pardirnatural\partightenfactor0
+\ls5\ilvl0\cf0 {\listtext	\uc0\u8259 	}\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 5        1383          \
+5        1385 	  			79\
+5        155 				57\
+5         241				241\
+5        1382				422\
+5        1370				70\
+5        1386				268\
+5        111                			64\
+5        1384 				173\
+5        150               
+\b 			103
+\b0 \
+5        292 				2\
+5        458					140\
+5        479 	
+\b 			108
+\b0 \
+5        977 				43\
+5        376 				246\
+5        459 				168\
+5 	1365 				124\
+5 	62 					\
+5 	1366					297\
+\pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\pardirnatural\partightenfactor0
+\ls6\ilvl0\cf0 {\listtext	\uc0\u8259 	}\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 6 	155					99\
+6 	1383					189\
+6 	1385					473\
+6 	1382					199\
+6 	62					67\
+6 	292					1\
+6 	241					201\
+6 	1370					6\
+6 	1384					462\
+6 	458					14\
+6 	459					164\
+6 	461					110\
+6 	1386					84\
+6 	1365					78\
+6 	1366					2\
+6	 111					208\
+6	 150					250\
+6	 479 					388\
+\pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\pardirnatural\partightenfactor0
+\ls7\ilvl0\cf0 {\listtext	\uc0\u8259 	}\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 7	 400 					47\
+7 	419					4\
+7 	1387 				5\
+7 	412					25\
+7 	1392					7\
+7 	1398					8\
+7 	1397					6\
+7 	1400					2\
+7 	1399 				1\
+\pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\pardirnatural\partightenfactor0
+\ls8\ilvl0\cf0 {\listtext	\uc0\u8259 	}\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 8 	400 					7\
+8 	1387 				2\
+8 	1392					28\
+8 	1398					27\
+\pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\pardirnatural\partightenfactor0
+\ls9\ilvl0\cf0 {\listtext	\uc0\u8259 	}\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 9 	656					25\
+9 	1313					211\
+9 	1317					\
+9 	1316					18	\
+9 	1318					68\
+9 	1319					256\
+9 	1157 				87\
+9 	1274 				257\
+\pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\pardirnatural\partightenfactor0
+\ls10\ilvl0\cf0 {\listtext	\uc0\u8259 	}\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 10 	1379 	\
+10 	1305 				458\
+10	 1304				\
+10	 40\
+10	 293\
+10	 1309\
+10	 161 		\
+10	 421					364\
+10	 1377				\
+10	 1378\
+10	 1381				467\
+10	 225 					33\
+10	 1380 				4\
+10	 448					389\
+10 	449					326\
+10 	1124 				13\
+10 	1280 				76	\
+10 	433 					\
+10 	923 					402\
+10 	924					200\
+10 	1062					257\
+10	 1074	 			258\
+10	 1075 				333\
+10 	1213\
+}
